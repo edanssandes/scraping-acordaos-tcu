@@ -4,6 +4,7 @@ import requests
 import re
 import os
 import json
+import sys
 
 
 
@@ -35,6 +36,8 @@ def baixar_acordao_completo(diretorio_acordaos, acordao):
     # Baixa informações completas do acórdão a partir da pesquisa integrada do TCU
     urlCompleto = f'https://pesquisa.apps.tcu.gov.br/rest/publico/base/acordao-completo/documento?termo={termo}&filtro={filtro}'
     r = requests.get(urlCompleto)
+    if 'What code is in the image?' in r.text:
+        sys.exit("Captcha detectado. Aguarde alguns instantes e tente novamente.")
     j = r.json()
     assert (j['quantidadeEncontrada'] == 1)
     assert (len(j['documentos']) == 1)
