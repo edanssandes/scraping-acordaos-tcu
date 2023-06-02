@@ -106,6 +106,8 @@ def main():
     # Processa argumentos de linha de comando
     args = tratar_argumentos()
 
+    t0 = time()
+
     # Lista os "N" últimos acórdãos
     i = args.inicio_acordaos
     n = args.quantidade_acordaos
@@ -116,6 +118,10 @@ def main():
     for acordao in acordaos:
         baixar_acordao_completo(args.diretorio_acordaos, acordao, args.taxa_download)
 
+    t1 = time()
+    delta_t = t1-t0
+
+    print(f"Fim da rotina. Tempo decorrido: {delta_t:.1f} segundos")
 
 if __name__ == '__main__':
     main()

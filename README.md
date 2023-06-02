@@ -11,7 +11,7 @@ para atualizar os acórdãos faltantes, caso necessário.
 
 ### Metadados dos arquivos:
 
-Para fins de exemplo, seguem as chaves e trechos dos valores (truncados) contidos
+Para fins de exemplo, seguem as chaves e trechos dos valores contidos
 no arquivo json relativo ao Acórdão 225/2023 do TCU-Plenário.
 
 ```
